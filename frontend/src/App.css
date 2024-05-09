@@ -2,20 +2,21 @@
 
 *{
     font-family: "Poppins", sans-serif;
-    margin: 0;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 3em;
+    background-color: #ffffff;
 }
 
 .cropper {
-    position: relative;
-    width: 50vw;
+    position: absolute;
+    top: 115px;
+    background-color: #ffffff;
+    width: 50em;
     height: 80vh;
     display: flex;
     align-items: flex-end;
@@ -23,10 +24,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.09);
-}
-
-input[type='radio'] {
-    accent-color: #1895B0;
+    background-color: #ffffff;
 }
 
 .btn {
@@ -46,35 +44,86 @@ input[type='radio'] {
     color: #1895B0;
     border: 2px solid #1895B0;
 }
-
-.actions-btns {
-    padding-bottom: 1rem;
-}
-
+.action-btns {
+    background-color: #ffffff;
+} 
 .btn-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
 }
-.cropper {
-    position: absolute;
-    top: 115px;
 
-}
 .cropped-img {
     width: 300px;
     height: 300px;
     object-fit: contain;
+    background-color: #ffffff;
+}
+
+.profile-photo {
+    background-color: #ddd;
+    border-radius: 50%;
+    height: 150px;
+    object-fit: cover;
+    width: 150px;  
+}
+
+.name_container {
+    margin: 0 0 2em 10em
+}
+
+.profile-photo_container{
+    background-color: #d7d7d7;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2em;
 }
 
 .border-container {
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
 
 .border-container:hover {
-    border-color: #007bff; /* cor da borda ao passar o mouse */
-    box-shadow: 0px 0px 15px 0px rgba(0,123,255,0.75); /* sombra ao passar o mouse */
+    border-color: #008d92; /* cor da borda ao passar o mouse */
+    box-shadow: 0px 0px 15px 0px rgba(8, 154, 190, 0.75); /* sombra ao passar o mouse */
+}
+
+.biography-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+  
+  .biography-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+    .cropper {
+        width: 23em;
+        height: 23em;
+        min-height: 40vh;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .cropper {
+        width: 23em;
+        height: 23em;
+        min-height: 40vh;
+    }
+
+    .name_container {
+        margin: 1em 0 1em 7em;
+    }
 }

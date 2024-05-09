@@ -1,58 +1,84 @@
-function UserInfo({ avatar, setAvatar, isEditing, setIsEditing }) {
+import React from 'react';
+
+function UserInfo({ avatar, setIsEditing, nome, idade, dataDeNascimento, dataDeNascimentoUserInfo, rua, numero, complemento, bairro, cidade, estado, biografia }) {
   return (
     <div>
-      {isEditing === false ? (
         <div className="col-12 d-flex justify-content-center">
           {/* Conteúdo da seção de informações do usuário */}
           <div className="row">
             {/* Nome, idade e imagem de perfil */}
             <div className="col-md-12">
-              <h4>Perfil do usuário</h4>
-              <div className="row">
-                <div className="col-6">
+              <div className="row d-flex align-items-center">
+                <div className="col-2">
                   {/* Imagem de perfil do usuário */}
-                  <img
-                    src={avatar}
-                    className="img-fluid border-container"
-                    style={{
-                      borderRadius: "50%",
-                      height: '10em',
-                      width: '12em'
-                    }}
-                    alt="Foto de perfil do usuário"
-                  />
+                  <div className='profile-photo_container border-container'>
+                    <img
+                      src={avatar}
+                      className="profile-photo"
+                      alt="Foto de perfil do usuário"
+                      hidden={!avatar}
+                    />
+                  </div>
                 </div>
-                <div className="col-4">
+                <div className="col-6 name_container">
                   {/* Nome e idade do usuário */}
-                  <p>
-                    Nome <br /> Idade{" "}
-                  </p>
+                  <br/>
+                  <h2>{nome ? nome : "Adicione seu nome"}</h2>
+                  <h2>{idade ? idade + " anos" : "Entre sua data de nascimento"}</h2>
                 </div>
               </div>
             </div>
-            <div className="col-md-12">
+            <div className="col-md-12 my-4">
               {/* Informações sobre o usuário */}
               <h4>Informações do usuário</h4>
-              <div className="row">
-                <div className="row">
+              <div className="row my-4">
+                <div className="col-12">
                   {/* Biografia */}
-                  <p>Biografia</p>
+                  {biografia ? (
+                    <div>
+                      <h6>Biografia</h6>
+                      <div className="biography-container">
+                        <p className="biography-text">{biografia}</p>
+                      </div>
+                      <hr className="my-4" />
+                    </div>
+                  ) : (
+                    <div>
+                      <h6>Biografia</h6>
+                      <div className="biography-container">
+                        <p className="biography-text">Escreva sua biografia</p>
+                      </div>
+                      <hr className="my-4" />
+                    </div>
+                  )}
                 </div>
-                <div className="row">
+                <div className="col-12">
                   {/* Data de nascimento */}
-                  <p>Data de nascimento</p>
+                  <p> {dataDeNascimentoUserInfo ? "Data de nascimento: " + dataDeNascimentoUserInfo : "Entre sua data de nascimento"}</p>
+                  <hr className="my-4" />
                 </div>
-                <div className="row">
+                <div className="col-12">
                   {/* Rua e número */}
-                  <p>Rua e número</p>
+                  <p>{rua ? rua : "Entre com o seu endereço"}  {numero ? ", nº " + numero  : ""} {", " + complemento ? complemento : ""}</p>
+                  <hr className="my-4" />
                 </div>
-                <div className="row">
+                <div className="col-12">
                   {/* Bairro */}
-                  <p>Bairro</p>
+                  {bairro && (
+                    <div>
+                      <p>Bairro {bairro}</p>
+                      <hr className="my-4" />
+                    </div>
+                  )}
                 </div>
-                <div className="row">
+                <div className="col-12">
                   {/* Cidade e estado */}
-                  <p>Cidade, Estado</p>
+                  {cidade && estado && (
+                    <div>
+                      <p>Cidade {cidade}, {estado}</p>
+                      <hr className="my-4" />
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="col-12 d-flex justify-content-center">
@@ -60,8 +86,8 @@ function UserInfo({ avatar, setAvatar, isEditing, setIsEditing }) {
                 <button
                   className="btn btn-primary"
                   id="editButton"
-                  style={{ width: "6em" }}
-                  onClick={() => setIsEditing(true)} // Adicione o onClick aqui
+                  style={{ width: '6em' }}
+                  onClick={() => setIsEditing(true)}
                 >
                   Editar
                 </button>
@@ -69,11 +95,6 @@ function UserInfo({ avatar, setAvatar, isEditing, setIsEditing }) {
             </div>
           </div>
         </div>
-      ) : (
-        <div>
-          {/* Formulário de edição (implemente aqui) */}
-        </div>
-      )}
     </div>
   );
 }

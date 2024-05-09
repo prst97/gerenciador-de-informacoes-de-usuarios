@@ -24,7 +24,7 @@ const FileInput = ({onImageSelected}) => {
           onChange={handleFileChange}
           style={{ display: "none" }}
         />
-        <label htmlFor="avatar" className="btn btn-outline-secondary">
+        <label htmlFor="avatar" className="btn btn-outline-secondary" style={{margin: "1em 0 2em 0"}}>
           Selecionar nova foto de perfil
         </label>
       </div>
