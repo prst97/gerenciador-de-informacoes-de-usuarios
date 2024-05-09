@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Loader } from "@googlemaps/js-api-loader";
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyC2WQvmrxktLVwHsPCYgV0wyEkVCiSfVDY';
+const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const AddressInput = ({ setRua, setNumero, setBairro, setCidade, setEstado }) => {
   const [selectedAddress, setSelectedAddress] = useState('');
