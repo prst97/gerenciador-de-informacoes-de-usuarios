@@ -1,5 +1,6 @@
 // Importações de módulos e estilos
 import { useState } from 'react';
+import "dotenv/config";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
